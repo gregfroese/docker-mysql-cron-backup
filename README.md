@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/fradelg/docker-mysql-cron-backup.svg?branch=master)](https://travis-ci.org/fradelg/docker-mysql-cron-backup)
-
 # mysql-cron-backup
 
 This docker image runs mysqldump to backup your databases periodically using cron task manager. Backups are placed in `/backup` so you can mount your backup docker volume in this path.  This image is tuned for use on ARM architecture and therefore ready to use on a Raspberry Pi.
@@ -12,7 +10,7 @@ docker container run -d \
        --env MYSQL_PASS=my_password \
        --link mysql
        --volume /path/to/my/backup/folder:/backup
-       fradelg/mysql-cron-backup
+       gregfroese/mysql-cron-backup-arm
 ```
 
 
@@ -52,7 +50,7 @@ services:
     restart: unless-stopped
 
   mysql-cron-backup:
-    image: fradelg/mysql-cron-backup
+    image: gregfroese/mysql-cron-backup-arm
     depends_on:
       - mariadb
     volumes:
