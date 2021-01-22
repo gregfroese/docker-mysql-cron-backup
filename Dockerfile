@@ -3,8 +3,8 @@ LABEL maintainer "Fco. Javier Delgado del Hoyo <frandelhoyo@gmail.com>"
 
 RUN apk add --update tzdata bash mysql-client gzip openssl mariadb-connector-c && rm -rf /var/cache/apk/*
 
-ARG OS=alpine-linux
-ARG ARCH=amd64
+ARG OS=linux
+ARG ARCH=armel
 ARG DOCKERIZE_VERSION=v0.6.1
 
 RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-$OS-$ARCH-$DOCKERIZE_VERSION.tar.gz \
